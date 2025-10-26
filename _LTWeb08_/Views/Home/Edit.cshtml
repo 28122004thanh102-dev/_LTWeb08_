@@ -1,0 +1,44 @@
+﻿@model _LTWeb08_.Models.TheLoaiTin
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TheLoaiTin</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDLoai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDLoai)
+            @Html.ValidationMessageFor(model => model.IDLoai)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenTheLoai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenTheLoai)
+            @Html.ValidationMessageFor(model => model.TenTheLoai)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

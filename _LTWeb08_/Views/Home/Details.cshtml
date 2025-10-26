@@ -1,0 +1,30 @@
+﻿@model _LTWeb08_.Models.TheLoaiTin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TheLoaiTin</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDLoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenTheLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenTheLoai)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Xóa", "Delete", new { id = Model.IDLoai }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDLoai }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

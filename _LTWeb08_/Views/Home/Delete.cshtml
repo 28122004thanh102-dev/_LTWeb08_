@@ -1,0 +1,33 @@
+﻿@model _LTWeb08_.Models.TheLoaiTin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TheLoaiTin</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDLoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenTheLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenTheLoai)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

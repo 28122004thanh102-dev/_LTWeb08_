@@ -1,0 +1,39 @@
+﻿@model IEnumerable<_LTWeb08_.Models.TheLoaiTin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ThemMoi")
+</p>
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTheLoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTheLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id=item.IDLoai}) |
+            @Html.ActionLink("Details", "Details", new { id = item.IDLoai }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDLoai })
+        </td>
+    </tr>
+}
+
+</table>
